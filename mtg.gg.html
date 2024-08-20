@@ -583,6 +583,8 @@
 
             for(let [idx, item] of filter.entries()){
 
+                console.log(item);
+
                 if (grid == 2){
                     stringa += `<div class="div-deck-2"><button class="btn btn-deck" style="background-image: url(${item.coi});" onclick=""><h6 class="p-buttons">${item.co}&NonBreakingSpace;</h6></button></div>`;
                 }
@@ -639,21 +641,22 @@
             localStorage.setItem('settings', JSON.stringify(impostazioni));
         }
 
-        localStorage.setItem('deck_list', JSON.stringify(`[{"c":1,"co":"Thassa, Abitante degli Abissi","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Thassa.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"U","l":""},{"c":2,"co":"Miirym, Dragone Sentinella","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Miirym.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"GUR","l":""},{"c":3,"co":"Squarciagrinfia, Terrore di Qal Sisma","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Goreclaw.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"G","l":""},{"c":4,"co":"Liesa, Manto del Crepuscolo","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/LiesaThassa.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"WB","l":""},{"c":5,"co":"Il Mostro di Gitrog","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/GitrogMonster.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"BG","l":""},{"c":6,"co":"Rafiq dei Molti","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Rafiq.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"GUW","l":""},{"c":7,"co":"Zanna Squittente, Generale Scoiattolo","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Chatterfang.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"BG","l":""},{"c":8,"co":"Hakbal dell'Anima Crescente","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Hakbal.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"GU","l":""},{"c":9,"co":"Zhulodok, Divoratore del Vuoto","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Zhulodok.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"C","l":""},{"c":10,"co":"Sauron, l'Oscuro Signore","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Sauron.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"UBR","l":""},{"c":11,"co":"Pako, Segugio da Riporto Arcano","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Haldan.jpg?raw=true","aco":"","acoi":"","p":"Haldan, Avido Arcanista","ap":"","i":"GUR","l":""},{"c":12,"co":"Gishath, Avatar del Sole","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Gishath.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"RGW","l":""},{"c":13,"co":"Omnath, l'Omnilocus","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/OmanthLocust.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"WUBRG","l":""},{"c":14,"co":"Lathril, Lama degli Elfi","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Lathril.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"BG","l":""},{"c":15,"co":"Isshin, Due Cieli in Uno","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Isshin.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"RWB","l":""},{"c":16,"co":"Signore dell'Alveare dei Tramutanti","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/SliverHivelord.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"WUBRG","l":""},{"c":17,"co":"Hazezon, Plasmatore delle Sabbie","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Hazezon.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"RGW","l":""},{"c":18,"co":"Judith, Maestra di Massacri","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/JudithConn.jpg?raw=true","aco":"Alastor, il Demone della Radio","acoi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Alastor.jpg?raw=true","p":"","ap":"","i":"BR","l":""},{"c":19,"co":"Jhoira, Capitana della Cavalcavento","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Jhoira.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"UR","l":""},{"c":20,"co":"Signore dei Nazgul","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/LordNazgul.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"UB","l":""},{"c":21,"co":"Ratadrabik di Urborg","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Ratadrabik.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"WB","l":""},{"c":22,"co":"Azusa, Smarrita ma Cercatrice","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Azusa.jpg?raw=true","aco":"Oogway, Maestro del Chi","acoi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Oogway.jpg?raw=true","p":"","ap":"","i":"G","l":""},{"c":23,"co":"Éowyn, Fanciulla Combattente","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Eowyn.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"URW","l":""},{"c":24,"co":"Rivaz dell'Artiglio","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Rivaz.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"BR","l":""}]`));
         var searchBar = document.getElementById("search-decks");
 
         rangeDecks.addEventListener("input", gridSizeDecks);
 
         searchBar.addEventListener("input", printDecks);
 
-        async function prova() {
-            const url1 = 'https://raw.githubusercontent.com/DammyTheMountain/MTG.gg/main/assets/prova.txt'
+        async function deckStorage() {
+            const url1 = 'https://raw.githubusercontent.com/DammyTheMountain/Mtg.gg/main/assets/database/decks.txt'
             const response = await fetch(url1).catch();
-            const data = await response.text();
+            let data = await response.text();
+            data = JSON.parse(data);
             console.log(data);
+            localStorage.setItem('deck_list', JSON.stringify(data));
         }
 
-        prova();
+        deckStorage();
 
         homePage();
 
