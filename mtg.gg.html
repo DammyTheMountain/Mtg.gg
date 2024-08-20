@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <title>mtg.gg</title>
+</head>
+
+<style>
+
+    *{
+        outline: 0px solid red;
+    }
+
+    body{
+        background-color:rgb(20, 20, 20);
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        position: absolute;
+        background-color: rgb(50, 50, 50);
+        overflow: hidden;
+        position: fixed;
+        height: 10%;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .navbar-button{
+        border-radius: 50%;
+        width: 100%;
+    }
+
+    .td-nav{
+        width: 20%;
+        height: 1vh;
+        text-align: center;
+        color: #a3a3a3;   
+        font-size: 75%;
+    }
+
+    /* #home{
+        background-color: rgba(255, 255, 255, 0.195);
+        border-radius: 15%;
+        color: #FFF;
+    } */
+
+    .i-nav{
+        margin-top: 3vh;
+    }
+
+    .container-fluid{
+        position:absolute;
+        top:0%;
+        height: 90%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    #settingsPage{
+        height: 100%;
+    }
+
+    .deck-filter{
+        width: 100%; 
+        height: 50px; 
+        border-radius: 5%;
+    }
+
+    .btn-deck{
+        position: relative;
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        width: 100%; 
+        height: 130px;
+        border-radius: 5%;
+    }
+
+    .div-deck-2{
+        width: 47%; 
+        margin-left: 2%;
+        margin-top: 2%;
+    }
+
+    .div-deck-3{
+        width: 30.7%; 
+        margin-left: 2%;
+        margin-top: 2%;
+    }
+
+    .div-deck-4{
+        width: 22.5%; 
+        margin-left: 2%;
+        margin-top: 2%;
+    }
+
+    .p-buttons{
+        color: #FFF;
+        text-align: left; 
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        padding-top: 1%;
+        padding-left: 3%;
+        padding-bottom: 1%;
+        font-weight: 500;
+        font-size: 100%;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+        background-color: #00000053;
+    }
+
+    .modal-content{
+        background-color: rgb(50, 50, 50);
+        backdrop-filter: blur(10px);
+        color: #FFF;
+    }
+
+
+</style>
+
+<body>
+    
+    <div>
+
+        <div class="navbar" id="navbar">
+            <table style="width: 100%; height: 80%;">
+                <tbody style="margin: auto;">
+                    <tr>
+                        <td class="td-nav" id="home">  
+                            <a onclick="homePage()">
+                                <i class="fa-solid fa-house fa-xl i-nav"></i> 
+                                <p style="margin-top: 8px;">Home</p>
+                            </a>
+                        </td>
+
+                        <td class="td-nav" id="tier-list">
+                            <a onclick="tierPage()">
+                                <i class="fa-solid fa-list fa-xl i-nav"></i>
+                                <p style="margin-top: 8px;">Tier List</p>
+                            </a>
+                        </td>
+
+                        <td class="td-nav" id="history">
+                            <a onclick="historyPage()">
+                                <i class="fa-solid fa-calendar-days fa-xl i-nav"></i>
+                                <p style="margin-top: 8px;">Cronologia</p>
+                            </a>
+                        </td>
+
+                        <td class="td-nav" id="decks">
+                            <a onclick="decksPage()">
+                                <i class="fa-solid fa-layer-group fa-xl i-nav"></i>
+                                <p style="margin-top: 8px;">Mazzi</p>
+                            </a>
+                        </td>
+
+                        <td class="td-nav" id="points">
+                            <a onclick="gamePage()">
+                                <i class="fa-solid fa-table fa-xl i-nav"></i>
+                                <p style="margin-top: 8px;">Contapunti</p>
+                            </a>
+                        </td>
+
+                    </tr>        
+                </tbody>
+            </table>
+        </div> 
+
+        
+        <div class="container-fluid" id="homePage" hidden>
+            
+            <table style="width: 100%; height: 8%; margin-top: 2.5%;">
+                <tbody style="margin: auto;">
+
+                    <tr>   
+                        <td style="width: 85.37%;"></td>
+
+                        <td style="padding-left: 1.5%;" id="decks-last">
+                            <button class="btn deck-filter" type="button" style="background-color: rgba(255,255,255,0.1); color: #FFF; outline: 1px solid rgb(222, 222, 222);" onclick="settingsPage()"><i class="fa-solid fa-gear"></i></button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="container-fluid" id="tierListPage" hidden><h1 style="color: #FFF;">Tier list</h1></div>
+        <div class="container-fluid" id="historyPage" hidden><h1 style="color: #FFF;">Cronologia partite</h1></div>
+
+        <div class="container-fluid" id="decksPage">    
+            <div class="row">
+                <div class="col-8">
+                    
+                </div>
+            </div>
+            <table style="width: 100%; height: 8%; margin-top: 2.5%;">
+                <tbody style="margin: auto;">
+
+                    <tr>   
+                        <td style="width: 70%;">
+                            <input class="form-control mr-sm-2" id="search-decks" type="search" style="width: 100%; height: 50px; background-color: rgba(255,255,255,0.1); color: #FFF;" placeholder="Cerca"/>
+                        </td>
+                        <td style="padding-left: 1.5%;" id="decksAlphabet"></td>
+                        <td style="padding-left: 1.5%;" id="decksLast"></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div class="row" id="deck_list"></div>
+
+        </div>
+
+        <div class="container-fluid" id="gamePage" hidden><h1 style="color: #FFF;">Contapunti</h1></div>
+
+        <div class="container-fluid" id="statsDeckPage" hidden></div>
+
+        <div class="container-fluid" id="settingsPage" hidden>
+
+            <div class="row">
+
+                <div class="col-12" style="padding-top: 3%; padding-bottom: 3%; background-color: rgb(50, 50, 50); color: #FFF;">
+
+                    <button type="button" class="btn" onclick="settingsBack()"><i class="fa-solid fa-arrow-left" style="background-color: rgb(50, 50, 50); color: #FFF; font-size: xx-large;"></i></button>
+                    <h1>Impostazioni</h1>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-12" style="color: #FFF; text-align: left; margin-top: 5%;">
+
+                    <div class="row">
+
+                        <div class="col-10">
+                            <h4>Informazioni alternative</h4>
+                        </div>
+
+                        <div class="col-2" style="margin-top: 1.3%;">
+                            <div class="custom-control custom-switch" id="alternativeInfoSwitch">
+                                <input type="checkbox" class="custom-control-input" id="alternativeSwitch" checked>
+                                <label class="custom-control-label" for="alternativeSwitch"></label>
+                            </div>
+                        </div>
+                    </div>
+                      
+                    <div class="row">
+
+                        <div class="col-5">
+                            <button class="btn btn-deck" style="background-image: url(Progetto/Azusa.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Azusa, Lost but Seeking</h6></button>     
+                        </div>
+
+                        <div class="col-2" style="margin-top: 4.5vh; text-align: center;">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+
+                        <div class="col-5">
+                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>     
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top: 6%;">
+
+                        <div class="col-12">
+                            <h6 style="color: grey; font-size: small;">Alcuni mazzi possono avere nomi e/o immagini alternative.</h6>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <hr style="background-color: #a3a3a3;"/>
+
+            <div class="row">
+
+                <div class="col-12" style="color: #FFF; text-align: left; margin-top: 0%;">
+
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4>Dimensione griglia mazzi</h4>
+                        </div>
+
+                    </div>
+                      
+                    <div class="row">
+
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-4" style="text-align: left;">
+                                    <h4 style="color: #d3d3d3;">2</h4>
+                                </div>
+                                <div class="col-4" style="text-align: center;">
+                                    <h4 style="color: #d3d3d3;">3</h4>
+                                </div>
+                                <div class="col-4" style="text-align: right;">
+                                    <h4 style="color: #d3d3d3;">4</h4>
+                                </div>
+                            </div>
+                            <div class="row" id="gridSizeSlider" style="margin-left: 0%; margin-right: 0%;">
+                                <input type="range" min="2" max="4" id="rangeDecks" value="2" style="width: 100%;">
+                            </div>
+                            <div class="row" style="margin-top: 6%;">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 1%;">
+                                        <div class="col-4">
+                                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top: 1%;">
+                                        <div class="col-3">
+                                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>
+                                        </div>
+                                        <div class="col-3">
+                                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>
+                                        </div>
+                                        <div class="col-3">
+                                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>
+                                        </div>
+                                        <div class="col-3">
+                                            <button class="btn btn-deck" style="background-image: url(Progetto/Oogway.png); height: 12vh;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Chi Master</h6></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <hr style="background-color: #a3a3a3;"/>
+
+            <div class="row">
+
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <script>
+
+        const homePage = () => {
+            document.getElementById("homePage").hidden = false;
+            document.getElementById("tierListPage").hidden = true;
+            document.getElementById("historyPage").hidden = true;
+            document.getElementById("decksPage").hidden = true;
+            document.getElementById("gamePage").hidden = true;
+            document.getElementById("statsDeckPage").hidden = true;
+        }
+
+        const tierPage = () => {
+            document.getElementById("homePage").hidden = true;
+            document.getElementById("tierListPage").hidden = false;
+            document.getElementById("historyPage").hidden = true;
+            document.getElementById("decksPage").hidden = true;
+            document.getElementById("gamePage").hidden = true;
+            document.getElementById("statsDeckPage").hidden = true;
+        }
+
+        const historyPage = () => {
+            document.getElementById("homePage").hidden = true;
+            document.getElementById("tierListPage").hidden = true;
+            document.getElementById("historyPage").hidden = false;
+            document.getElementById("decksPage").hidden = true;
+            document.getElementById("gamePage").hidden = true;
+            document.getElementById("statsDeckPage").hidden = true;
+        }
+
+        const decksPage = () => {
+
+            document.getElementById("homePage").hidden = true;
+            document.getElementById("tierListPage").hidden = true;
+            document.getElementById("historyPage").hidden = true;
+            document.getElementById("decksPage").hidden = false;
+            document.getElementById("gamePage").hidden = true;
+            document.getElementById("statsDeckPage").hidden = true;
+
+            printFilterDeck(JSON.parse(localStorage.getItem('settings')).ordine);
+            printDecks();
+        }
+
+        const gamePage = () => {
+
+            document.getElementById("homePage").hidden = true;
+            document.getElementById("tierListPage").hidden = true;
+            document.getElementById("historyPage").hidden = true;
+            document.getElementById("decksPage").hidden = true;
+            document.getElementById("gamePage").hidden = false;
+            document.getElementById("statsDeckPage").hidden = true;
+        }
+
+        const settingsPage = () => {
+            document.getElementById("homePage").hidden = true;
+            document.getElementById("navbar").hidden = true;
+
+            let impostazioni = JSON.parse(localStorage.getItem('settings'));
+
+            document.getElementById("alternativeSwitch").checked = impostazioni.alternativeInfo;
+            document.getElementById("rangeDecks").value = impostazioni.deckGrid
+
+            document.getElementById("settingsPage").hidden = false;
+        }
+
+        const settingsBack = () => {
+            document.getElementById("homePage").hidden = false;
+            document.getElementById("navbar").hidden = false;
+            document.getElementById("settingsPage").hidden = true;
+
+        }
+        
+        function sortOn (arr, prop) {
+            arr.sort (
+                function (a, b) {
+
+                    let one = a[prop];
+                    let two = b[prop];
+
+                    if (typeof one == typeof ""){
+                        one = one.toLowerCase();
+                    }
+
+                    if (typeof two == typeof ""){
+                        two = two.toLowerCase();
+                    }
+
+                    if (one < two){
+                        return -1;
+                    } else if (one > two){
+                        return 1;
+                    } else {
+                        return 0;   
+                    }
+                }
+            );
+
+            return arr;
+        }
+
+        function sortOnOpposite (arr, prop) {
+            arr.sort (
+                function (b, a) {
+
+                    let one = a[prop];
+                    let two = b[prop];
+
+                    if (typeof one == typeof ""){
+                        one = one.toLowerCase();
+                    }
+
+                    if (typeof two == typeof ""){
+                        two = two.toLowerCase();
+                    }
+
+                    if (one < two){
+                        return -1;
+                    } else if (one > two){
+                        return 1;
+                    } else {
+                        return 0;   
+                    }
+                }
+            );
+
+            return arr;
+        }
+
+        const printFilterDeck = (char) => {
+
+            let impostazioni = JSON.parse(localStorage.getItem('settings'));
+
+            impostazioni.ordine = char;
+
+            localStorage.setItem('settings', JSON.stringify(impostazioni));
+
+            if (char == 'A'){
+                document.getElementById("decksAlphabet").innerHTML = `<button class="btn deck-filter" type="button" style="background-color: #FFF; font-weight: 500;" onclick="printFilterDeck('Z')">Az</button>`
+                document.getElementById("decksLast").innerHTML = `<button class="btn deck-filter" type="button" style="background-color: rgba(255,255,255,0.1); color: #FFF; outline: 1px solid rgb(222, 222, 222);" onclick="printFilterDeck('U')"><i class="fa-regular fa-clock"></i></button>`
+            }
+
+            if (char == 'Z'){
+                document.getElementById("decksAlphabet").innerHTML = `<button class="btn deck-filter" type="button" style="background-color: black; color: #FFF; font-weight: 500;" onclick="printFilterDeck('A')">Az</button>`
+                document.getElementById("decksLast").innerHTML = `<button class="btn deck-filter" type="button" style="background-color: rgba(255,255,255,0.1); color: #FFF; outline: 1px solid rgb(222, 222, 222);" onclick="printFilterDeck('U')"><i class="fa-regular fa-clock"></i></button>`
+            }
+
+            if (char == 'U'){
+                document.getElementById("decksAlphabet").innerHTML = `<button class="btn deck-filter" type="button" style="background-color: rgba(255,255,255,0.1); color: #FFF; outline: 1px solid rgb(222, 222, 222);" onclick="printFilterDeck('A')">Az</button>`
+                document.getElementById("decksLast").innerHTML = `<button class="btn deck-filter" type="button" style="background-color: #FFF; font-weight: 500;" onclick="printFilterDeck('u')"><i class="fa-regular fa-clock"></i></button>`
+            }
+
+            if (char == 'u'){
+                document.getElementById("decksAlphabet").innerHTML = `<button class="btn deck-filter" type="button" style="background-color: rgba(255,255,255,0.1); color: #FFF; outline: 1px solid rgb(222, 222, 222);" onclick="printFilterDeck('A')">Az</button>`
+                document.getElementById("decksLast").innerHTML = `<button class="btn deck-filter" type="button" style="background-color: black; color: #FFF; font-weight: 500;" onclick="printFilterDeck('U')"><i class="fa-regular fa-clock"></i></button>`
+            }
+
+            printDecks();
+
+        }
+
+        const printDecks = (e) => {
+
+            let term;
+
+            if (e == undefined){
+                term = '';
+            }
+
+            else{
+                term = e.target.value.trim();
+            }
+
+            let elenco = JSON.parse(localStorage.getItem('deck_list'));
+
+            let impostazioni = JSON.parse(localStorage.getItem('settings'));
+            
+            let order = impostazioni.ordine;
+            let grid = impostazioni.deckGrid;
+
+            let filter = [];
+
+            if (term != ''){
+                for (let i = 0; i < elenco.length; i++){
+                    if (elenco[i].co.slice(0, term.length).normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim() == term.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim() ){
+
+                        filter.push(elenco[i]);
+
+                    }
+                }
+            }
+
+            else {filter = elenco;}
+
+            if (order == 'A'){
+                filter = sortOn(filter, "co");
+            }
+
+            if (order == 'Z'){
+                filter = sortOnOpposite(filter, "co"); 
+            }
+
+            if (order == 'u'){}
+
+            if (order == 'U'){   
+                filter = sortOn(filter, "c");
+            }
+
+            let stringa = "";
+
+            for(let [idx, item] of filter.entries()){
+
+                if (grid == 2){
+                    stringa += `<div class="div-deck-2"><button class="btn btn-deck" style="background-image: url(${item.coi});" onclick=""><h6 class="p-buttons">${item.co}&NonBreakingSpace;</h6></button></div>`;
+                }
+
+                else if (grid == 3){
+                    stringa += `<div class="div-deck-3"><button class="btn btn-deck" style="background-image: url(${item.coi});" onclick=""><h6 class="p-buttons">${item.co}&NonBreakingSpace;</h6></button></div>`;
+                }
+
+                else if (grid == 4){
+                    stringa += `<div class="div-deck-4"><button class="btn btn-deck" style="background-image: url(${item.coi});" onclick=""><h6 class="p-buttons">${item.co}&NonBreakingSpace;</h6></button></div>`;
+                }
+
+                else{
+                    stringa += `<div class="div-deck-2"><button class="btn btn-deck" style="background-image: url(${item.coi});" onclick=""><h6 class="p-buttons">${item.co}&NonBreakingSpace;</h6></button></div>`; 
+                }
+                
+            }
+
+            document.getElementById("deck_list").innerHTML = stringa;
+
+        };
+
+        const gridSizeDecks = (e) => {
+
+            let impostazioni = JSON.parse(localStorage.getItem('settings'));
+
+            impostazioni.deckGrid = e.target.value;
+
+            localStorage.setItem('settings', JSON.stringify(impostazioni));
+
+        }
+
+        document.getElementById('alternativeSwitch').addEventListener('change', (e) => {
+            this.checkboxValue = e.target.checked ? true : false;
+
+            let impostazioni = JSON.parse(localStorage.getItem('settings'));
+
+            impostazioni.alternativeInfo = this.checkboxValue;
+
+            localStorage.setItem('settings', JSON.stringify(impostazioni));
+        })
+
+        let settings = localStorage.getItem('settings');
+        if(!settings){
+
+            let impostazioni = {
+                ordine: 'A',
+                alternativeInfo: true,
+                deckGrid: 2,
+                homeGrid: 1,
+                startingPage: 1
+            }
+
+            localStorage.setItem('settings', JSON.stringify(impostazioni));
+        }
+
+        localStorage.setItem('deck_list', JSON.stringify(`[{"c":1,"co":"Thassa, Abitante degli Abissi","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Thassa.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"U","l":""},{"c":2,"co":"Miirym, Dragone Sentinella","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Miirym.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"GUR","l":""},{"c":3,"co":"Squarciagrinfia, Terrore di Qal Sisma","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Goreclaw.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"G","l":""},{"c":4,"co":"Liesa, Manto del Crepuscolo","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/LiesaThassa.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"WB","l":""},{"c":5,"co":"Il Mostro di Gitrog","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/GitrogMonster.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"BG","l":""},{"c":6,"co":"Rafiq dei Molti","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Rafiq.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"GUW","l":""},{"c":7,"co":"Zanna Squittente, Generale Scoiattolo","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Chatterfang.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"BG","l":""},{"c":8,"co":"Hakbal dell'Anima Crescente","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Hakbal.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"GU","l":""},{"c":9,"co":"Zhulodok, Divoratore del Vuoto","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Zhulodok.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"C","l":""},{"c":10,"co":"Sauron, l'Oscuro Signore","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Sauron.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"UBR","l":""},{"c":11,"co":"Pako, Segugio da Riporto Arcano","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Haldan.jpg?raw=true","aco":"","acoi":"","p":"Haldan, Avido Arcanista","ap":"","i":"GUR","l":""},{"c":12,"co":"Gishath, Avatar del Sole","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Gishath.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"RGW","l":""},{"c":13,"co":"Omnath, l'Omnilocus","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/OmanthLocust.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"WUBRG","l":""},{"c":14,"co":"Lathril, Lama degli Elfi","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Lathril.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"BG","l":""},{"c":15,"co":"Isshin, Due Cieli in Uno","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Isshin.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"RWB","l":""},{"c":16,"co":"Signore dell'Alveare dei Tramutanti","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/SliverHivelord.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"WUBRG","l":""},{"c":17,"co":"Hazezon, Plasmatore delle Sabbie","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Hazezon.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"RGW","l":""},{"c":18,"co":"Judith, Maestra di Massacri","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/JudithConn.jpg?raw=true","aco":"Alastor, il Demone della Radio","acoi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Alastor.jpg?raw=true","p":"","ap":"","i":"BR","l":""},{"c":19,"co":"Jhoira, Capitana della Cavalcavento","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Jhoira.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"UR","l":""},{"c":20,"co":"Signore dei Nazgul","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/LordNazgul.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"UB","l":""},{"c":21,"co":"Ratadrabik di Urborg","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Ratadrabik.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"WB","l":""},{"c":22,"co":"Azusa, Smarrita ma Cercatrice","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Azusa.jpg?raw=true","aco":"Oogway, Maestro del Chi","acoi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Oogway.jpg?raw=true","p":"","ap":"","i":"G","l":""},{"c":23,"co":"Éowyn, Fanciulla Combattente","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Eowyn.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"URW","l":""},{"c":24,"co":"Rivaz dell'Artiglio","coi":"https://github.com/DammyTheMountain/MTG.gg/blob/main/decks/Rivaz.jpg?raw=true","aco":"","acoi":"","p":"","ap":"","i":"BR","l":""}]`));
+        var searchBar = document.getElementById("search-decks");
+
+        rangeDecks.addEventListener("input", gridSizeDecks);
+
+        searchBar.addEventListener("input", printDecks);
+
+        async function prova() {
+            const url1 = 'https://raw.githubusercontent.com/DammyTheMountain/MTG.gg/main/assets/prova.txt'
+            const response = await fetch(url1).catch();
+            const data = await response.text();
+            console.log(data);
+        }
+
+        prova();
+
+        homePage();
+
+    </script>
+
+</body>
+</html>
