@@ -412,7 +412,6 @@
             document.getElementById("statsDeckPage").hidden = true;
 
             printFilterDeck(JSON.parse(localStorage.getItem('settings')).ordine);
-            printDecks();
         }
 
         const gamePage = () => {
@@ -565,6 +564,27 @@
 
             else {filter = elenco;}
 
+            let stringa = "";
+
+            if (impostazioni.alternativeInfo == true){ 
+
+                for(let [idx, item] of filter.entries()){
+
+                    if (item.aco != ''){
+                        item.co = item.aco;
+                    }
+
+                    if (item.acoi != ''){
+                        item.coi = item.acoi;
+                    }
+
+                    if (item.ap != ''){
+                        item.p = item.ap;
+                    }
+                    
+                }
+            }
+
             if (order == 'A'){
                 filter = sortOn(filter, "co");
             }
@@ -576,14 +596,10 @@
             if (order == 'u'){}
 
             if (order == 'U'){   
-                filter = sortOn(filter, "c");
+                filter = sortOnOpposite(filter, "c");
             }
 
-            let stringa = "";
-
-            for(let [idx, item] of filter.entries()){
-
-                console.log(item);
+            for(let [idx, item] of filter.entries()){   
 
                 if (grid == 2){
                     stringa += `<div class="div-deck-2"><button class="btn btn-deck" style="background-image: url(${item.coi});" onclick=""><h6 class="p-buttons">${item.co}&NonBreakingSpace;</h6></button></div>`;
@@ -649,7 +665,7 @@
 
         async function deckStorage() {
             const url1 = 'https://raw.githubusercontent.com/DammyTheMountain/Mtg.gg/main/assets/database/decks.txt'
-            const response = await fetch(url1).catch();
+            const response = await fetch(url1);
             let data = await response.text();
             data = JSON.parse(data);
             console.log(data);
