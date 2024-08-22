@@ -8,3 +8,4 @@ arte e nomi alternativi
 
 resetta impostazioni
 
+Default mode per le statistiche (commhundred di base)

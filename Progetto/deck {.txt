@@ -1,0 +1,35 @@
+deck {
+
+c
+co
+coi
+aco
+acoi
+p
+ap
+i
+l
+
+}
+
+
+lastUpdatated deck {dateTime}
+
+se il tuo lastUpdatedDeck é diverso allora fetcha nuove informazioni
+
+quando si fetchano nuove informazioni si controllano se le immagini necessarie sono gia salvate in local storage
+
+for (elenco) {
+	
+
+	if item.coi / item.acoi exists
+
+	else fetch
+
+}
+
+lastUpdatedDeckImages [{
+
+"n":"img.jpg","l":"linkToImageB64","u":"dateTime"
+
+}]

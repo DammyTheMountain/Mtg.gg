@@ -1,0 +1,26 @@
+salvare mazzo in [lista deck] in formato
+
+deck = {
+
+codice,
+commander,
+commander image nome storage/file,
+alternative name commander,
+alternative image commander nome storage/file
+partner
+list
+
+}
+
+e le immagini relative in altri json/local storage
+
+{commander image nome storage/file : image in base64}
+{alternative commander image nome storage/file : image in base64}
+
+match = {
+
+codice,
+data,
+partecipanti = [codice prima poszione,codice seconda posizione]
+dati partecipanti = [{dati prima posizione},{dati seconda posizione}]
+
