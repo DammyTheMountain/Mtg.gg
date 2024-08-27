@@ -1,148 +1,146 @@
 [
 	{
-                c: 1,
-                co: "Thassa, Abitante degli Abissi",
-                l: "https://www.mtggoldfish.com/deck/6595574#paper",
-                v: true
+                "c": "1",
+                "co": "Thassa, Abitante degli Abissi",
+                "l": "https://www.mtggoldfish.com/deck/6595574#paper",
+                "v": "true"
 	},
         {
-                c: 2,
-                co: "Miirym, Dragone Sentinella",
-		l: "",
-                v: true
+                "c": "2",
+                "co": "Miirym, Dragone Sentinella",
+		"l": "",
+                "v": "true"
 	},
         {
-                c: 3,
-                co: "Squarciagrinfia, Terrore di Qal Sisma",
-                l: "",
-                v: true
+                "c": "3",
+                "co": "Squarciagrinfia, Terrore di Qal Sisma",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 4,
-                co: "Liesa, Manto del Crepuscolo",
-                l: "",
-                v: true
+                "c": "4",
+                "co": "Liesa, Manto del Crepuscolo",
+                "l": "",
+                "v": "true"
 	},
         {
-                c: 5,
-                co: "Il Mostro di Gitrog",
-		l: "",
-                v: true
+                "c": "5",
+                "co": "Il Mostro di Gitrog",
+		"l": "",
+                "v": "true"
 	},
         {
-                c: 6,
-                co: "Rafiq dei Molti",
-                l: "",
-                v: true
+                "c": "6",
+                "co": "Rafiq dei Molti",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 7,
-                co: "Zanna Squittente, Generale Scoiattolo",
-                l: "",
-                v: true
+                "c": "7",
+                "co": "Zanna Squittente, Generale Scoiattolo",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 8,
-                co: "Sauron, l'Oscuro Signore",
-                l: "",
-                v: true
+                "c": "8",
+                "co": "Sauron, l'Oscuro Signore",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 9,
-                co: "Hakbal dell'Anima Crescente",
-                l: "https://www.mtggoldfish.com/deck/6595595#paper",
-                v: true
+                "c": "9",
+                "co": "Hakbal dell'Anima Crescente",
+                "l": "https://www.mtggoldfish.com/deck/6595595#paper",
+                "v": "true"
         },
         {
-                c: 10,
-                co: "Zhulodok, Divoratore del Vuoto",
-                l: "",
-                m: [],
-                v: true
+                "c": "10",
+                "co": "Zhulodok, Divoratore del Vuoto",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 11,
-                co: "Pako, Segugio da Riporto Arcano",
-                l: "https://manabox.app/decks/WzqDsIj7QQu761yZW9iPzA",
-                v: true
+                "c": "11",
+                "co": "Pako, Segugio da Riporto Arcano",
+                "l": "https://manabox.app/decks/WzqDsIj7QQu761yZW9iPzA",
+                "v": "true"
         },
         {
-                c: 12,
-                co: "Gishath, Avatar del Sole",
-                l: "",
-                v: true
+                "c": "12",
+                "co": "Gishath, Avatar del Sole",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 13,
-                co: "Isshin, Due Cieli in Uno",
-                l: "",
-                v: true
+                "c": "13",
+                "co": "Isshin, Due Cieli in Uno",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 14,
-                co: "Lathril, Lama degli Elfi",
-                l: "https://manabox.app/decks/KemcJ9eESHu00E4NvieByg",
-                v: true
+                "c": "14",
+                "co": "Lathril, Lama degli Elfi",
+                "l": "https://manabox.app/decks/KemcJ9eESHu00E4NvieByg",
+                "v": "true"
         },
         {
-                c: 15,
-                co: "Signore dell'Alveare dei Tramutanti",
-                l: "",
-                v: true
+                "c": "15",
+                "co": "Signore dell'Alveare dei Tramutanti",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 16,
-                co: "Judith, Maestra di Massacri",
-                l: "https://www.moxfield.com/decks/JSSlAxeSQ0O46rcL3vTsvg",
-                m: [],
-                v: true
+                "c": "16",
+                "co": "Judith, Maestra di Massacri",
+                "l": "https://www.moxfield.com/decks/JSSlAxeSQ0O46rcL3vTsvg",
+                "v": "true"
         },
         {
-                c: 17,
-                co: "Hazezon, Plasmatore delle Sabbie",
-                l: "",
-                v: true
+                "c": "17",
+                "co": "Hazezon, Plasmatore delle Sabbie",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 18,
-                co: "Jhoira, Capitana della Cavalcavento",
-                l: "",
-                v: true
+                "c": "18",
+                "co": "Jhoira, Capitana della Cavalcavento",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 19,
-                co: "Omnath, l'Omnilocus",
-                l: "https://www.moxfield.com/decks/AZKOyW6HiEmX4Mps3JRigw",
-                v: true
+                "c": "19",
+                "co": "Omnath, l'Omnilocus",
+                "l": "https://www.moxfield.com/decks/AZKOyW6HiEmX4Mps3JRigw",
+                "v": "true"
         },
         {
-                c: 20,
-                co: "Éowyn, Fanciulla Combattente",
-                l: "",
-                v: true
+                "c": "20",
+                "co": "Éowyn, Fanciulla Combattente",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 21,
-                co: "Azusa, Smarrita ma Cercatrice",
-                l: "https://www.moxfield.com/decks/iyJqTUN_A0amJabZrBvN7A",
-                v: true
+                "c": "21",
+                "co": "Azusa, Smarrita ma Cercatrice",
+                "l": "https://www.moxfield.com/decks/iyJqTUN_A0amJabZrBvN7A",
+                "v": "true"
         },
         {
-                c: 22,
-                co: "Ratadrabik di Urborg",
-                l: "https://manabox.app/decks/C2EYEhTRRgCBTo7rJcB1pA",
-                v: true
+                "c": "22",
+                "co": "Ratadrabik di Urborg",
+                "l": "https://manabox.app/decks/C2EYEhTRRgCBTo7rJcB1pA",
+                "v": "true"
         },
         {
-                c: 23,
-                co: "Signore dei Nazgûl",
-                l: "",
-                v: true
+                "c": "23",
+                "co": "Signore dei Nazgûl",
+                "l": "",
+                "v": "true"
         },
         {
-                c: 24,
-                co: "Rivaz dell'Artiglio",
-                l: "",
-                v: true
+                "c": "24",
+                "co": "Rivaz dell'Artiglio",
+                "l": "",
+                "v": "true"
         }
 ]
