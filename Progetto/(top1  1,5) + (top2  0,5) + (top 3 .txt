@@ -1,0 +1,168 @@
+winrate * 1,5 2player
+
+(top1 * 1,5) + (top2 * 0,5) 3 player
+
+(top1 * 1,5) + (top2 * 0,5) + (top 3 * 0,25) 4player
+
+(top1 * 1,5) + (top2 * 0,5) + (top 3 * 0,25) + (top 4 * 0,125) 5 player
+
+(top1 * 1,5) + (top2 * 0,5) + (top 3 * 0,25) + (top 4 * 0,125) + (top 5 * 0,0625) 6players
+
+
+
+// miirym 96,25 
+
+isshin 67,9
+
+goreclaw 66,7
+
+gitrog 65,175
+
+alastor 63,75
+
+pako 62,55
+
+zhulodok 60,8
+
+Gishath 57,15
+
+jhoira 56,8
+
+chaterfang 54,7
+
+Lthril 54,175
+
+Sliver 53,325
+
+Thassa 53
+
+hazezon 52,725
+
+Rafiq 51,95
+
+Suaron 48,275
+
+Hakbal 46,9
+
+Liesa 44,825
+
+Eowyn 41,25
+
+Omanth 40
+
+
+
+GOD	150	
+	
+S 	Top 10%		96,25 - 86,625
+			
+			miirym 96,25    	2
+
+
+
+A 	Top 25%		86,624 - 72,187	
+
+
+
+B 	Top 50%		72,186 - 48,125
+
+			isshin 67,9    		13	
+
+			goreclaw 66,7		3
+
+			gitrog 65,175		5
+
+			alastor 63,75		16
+
+			pako 62,55		11
+
+			zhulodok 60,8		10
+
+			Gishath 57,15		12
+
+			jhoira 56,8		18
+
+			chaterfang 54,7		7
+
+			Lthril 54,175		14
+	
+			Sliver 53,325		15
+
+			Thassa 53		1
+
+			hazezon 52,725		17
+
+			Rafiq 51,95		6
+
+			Suaron 48,275		8
+
+
+C	Top 75%		48,124 - 24,062
+
+			Hakbal 46,9		9
+
+			Liesa 44,825		4
+
+			Eowyn 41,25		20
+
+			Omanth 40		19
+
+
+D	Top 100%	16,974 - 0
+
+
+
+
+
+S 	Top 10%		67,9 - 61,11
+			
+			isshin
+
+			goreclaw
+	
+			gitrog	
+
+			alastor
+
+
+
+A 	Top 25%		61,109 - 50,925	
+
+			pako 62,55
+
+			zhulodok 60,8
+
+			Gishath 57,15
+
+			jhoira 56,8
+
+			chaterfang 54,7
+
+			Lthril 54,175
+	
+			Sliver 53,325
+
+			Thassa 53
+
+			hazezon 52,725
+
+			Rafiq 51,95
+
+
+
+B 	Top 50%		50.924 - 33,95
+
+			Suaron 48,275
+
+			Hakbal 46,9
+
+			Liesa 44,825
+
+			Eowyn 41,25
+
+			Omanth 40
+
+
+C	Top 75%		33,949 - 16,975
+
+D	Top 100%	16,974 - 0

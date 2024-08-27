@@ -1,0 +1,831 @@
+top1 + (top2 * 0,5) + (top 3 * 0,25)
+
+(WR*avgPos)+())
+
+sauron 36,2
+
+liesa 36,475
+
+rafiq 40,4
+
+thassa 41
+
+chatterfang 45,2
+
+gitrog 49.974
+
+goreclaw 52,8
+
+miirym 68,75
+
+
+((totalNumberPartecipants - avgPos) * winrate) + avgPos
+
+
+((totalPos + 0,5) - Average Position) * ((W1 * 1.5) + (W2 * 0,5) + (W3 * 0,25))
+
+				E
+
+			12,774
+
+				D
+
+			51,374
+
+omnath 66			C
+
+4,125
+
+eowyn 70,125			C
+
+10,111
+
+liesa 80,23675			C
+
+0,761
+
+sauron 80,997			C
+	
+6,706
+
+hakbal 87,703			C
+
+9,963			89,974	
+
+rafiq 97,666			B	
+
+3,034
+
+thassa 100,7			B
+
+1,568
+
+hazezon 102,2865		B
+
+1,730
+
+lathril 104,016			B
+
+4,233
+
+sliver 108,249			B	
+
+2.050			109,274
+
+gishath 110,2995		A	
+
+5,665
+
+chatterfang 115,964		A
+
+2,748
+
+jhoira 118,712			A
+
+4,104
+
+zhudolok 122,816		A
+
+4,684
+
+alastor 127,5			A
+
+6,357			128,574
+
+pako 133,857			S
+
+9,528
+
+gitrog 143,385			S
+
+12,026
+
+gorecalw 155,411		S
+
+4,883
+
+isshin 160,244			S
+
+99,631			167,174
+
+				S+
+
+			205,774
+
+				S++
+
+			244,374
+
+Miirym 259,875			Z
+	
+			282,974
+
+
+function middleOfArray = (arr[Math.floor((arr.length + 1) / 2)] + arr[Math.ceil((arr.length + 1) / 2)]) / 2;
+
+middleOfPoints = middleOfArray(sortedTierList)
+
+fasciaUtilizzataDi`0-550` = sortedTierList[sortedTierList/length-1] - sortedTierList[0]
+
+let tierGroups = {"Z","S++","S+","S","A","B","C","D","E"}
+
+char x = tierGroups[0]
+
+divisoneGruppiPunti = (fasciaUtilizzataDi`0-550`/NumeroTotMazziConStatDisponibili)*middleOfArray(sortedGapsList)
+
+inizioATier = middleOfPoints - (divisoneGruppiPunti/2)
+
+ArrayIniziVariTier = [(trovaNumeroPiuBassoPossibile())+(divisoneGruppiPunti*posThisArray), ...]
+
+
+
+		60,387
+
+
+omnath 68		D		
+
+2.125
+
+eowyn 70,125		D		
+
+2.111		71,83
+
+liesa 72,23675		C		
+
+2.761
+	
+sauron 74,997		C		
+	
+4.706
+
+hakbal 79,703		C		
+
+6.963		83,273		
+
+rafiq 86,666		B			
+
+1.034
+
+thassa 87,7		B		
+
+5.586
+
+hazezon 93,2865		B	
+
+3.73		94,716
+
+lathril 97,016		A
+		
+4.233
+
+sliver 101,249		A		
+
+1.05	
+		
+gishath 102,2995	A		
+
+1.665
+
+chatterfang 103,964	A
+		
+1.748
+
+jhoira 105,712		A		
+
+5.104		106,159
+
+zhudolok 110,816	S
+		
+2.684
+
+alastor 113,5		S
+		
+4.357		117,602
+	
+pako 117,857		S+
+
+3.528
+
+gitrog 121,385		S+		
+
+2.026
+
+gorecalw 123,411	S+	
+
+2.833
+
+isshin 126,244		S+	
+
+6.631		129,045
+				
+Miirym 132,875		S++		
+	
+			
+
+
+
+middleOfPoints = 100.4375
+middleOfGaps = 3.528
+fasciaUtilizzataDi`0-550` = 64,875
+divisoneGruppiPunti = 11,443
+inizio BTier = 94,716
+
+
+
+
+		43,770
+
+omnath 68		F
+
+2.125
+
+eowyn 70.125		F
+
+2.111
+
+liesa 72.23675		F
+
+2.761
+	
+sauron 74.997		F
+	
+4.076		76,381
+
+hakbal 79.703		E
+
+6.963
+
+rafiq 86.666		E	
+
+1.034
+
+thassa 87.7		E
+
+5.586
+
+hazezon 93.2865		E
+
+		108,992
+
+			D
+
+		151.603
+
+			C
+
+		174,214 
+	
+			B
+
+113.730		206,825 
+
+lathril 207.016		A
+		
+14.133
+	
+sliver 221.249		A
+
+1.050
+		
+gishath 222.299		A
+
+1.665
+
+chatterfang 223.964	A
+		
+1.748
+
+jhoira 225.712		A
+
+5.104
+
+zhudolok 230.816	A
+		
+2.684
+
+alastor 233.5		A
+		
+4.357
+	
+pako 237.857		A
+
+3.528		239.436
+
+gitrog 241.385		S
+	
+2.026
+
+gorecalw 243.411	S	
+
+2.833
+
+isshin 246.244		S
+
+6.631
+				
+Miirym 252.875		S
+
+		
+		272.047
+-----
+middleOfPoints = 223.131
+middleOfGaps = 3.528
+fasciaUtilizzataDi`0-550` = 184,875
+divisoneGruppiPunti = 32,611
+
+InizioATier = 206,825 
+
+	
+		13,125
+
+omnath 25		L
+
+		39,375
+
+eowyn 50		I
+
+		65,625
+
+liesa 75		H
+
+		91,875
+	
+sauron 100		G
+	
+		118,125
+
+hakbal 125		F
+
+		144,375
+
+rafiq 150		E	
+
+		170,625
+
+thassa 175		D
+
+		196,875
+
+hazezon 200		C
+
+		223,125
+
+lathril 225		A-
+		
+		249,375		
+	
+sliver 250		A
+
+	262,500
+			
+gishath 275		A
+
+		275,625
+
+chatterfang 300		S
+		
+		301,875
+
+jhoira 325		S+
+
+		x	
+
+zhudolok 350		S++
+			
+		x
+		
+alastor 375		Z
+		
+		x
+	
+pako 400		Z+
+	
+		x	
+
+gitrog 425		Z++
+
+		x
+
+gorecalw 450		Z+++
+
+		x
+
+isshin 475		Z++++
+
+		x
+				
+Miirym 500		Z+++++
+
+-----
+middleOfPoints = 262,500
+middleOfGaps = 25
+fasciaUtilizzataDi`0-550` = 475
+
+
+divisoneGruppiPunti = (middleOfPoints/(NumTotMazzi/2))
+divisoneGruppiPunti = 26,25
+
+InizioATier = 206,825 
+
+
+
+		62,526
+
+
+omnath 68		D		
+
+2.125
+
+eowyn 70,125		D		
+
+2.111		
+
+liesa 72,23675		D		
+
+2.761		73,009
+	
+sauron 74,997		C		
+	
+4.706
+
+hakbal 79,703		C		
+
+6.963		83,492		
+
+rafiq 86,666		B			
+
+1.034
+
+thassa 87,7		B		
+
+5.586
+
+hazezon 93,2865		B	
+
+3.73		93,975
+
+lathril 97,016		A
+		
+4.233
+
+sliver 101,249		A		
+
+1.05	
+		
+gishath 102,2995	A		
+
+1.665
+
+chatterfang 103,964	A
+		
+1.748		104,458
+
+jhoira 105,712		S		
+
+5.104		
+
+zhudolok 110,816	S
+		
+2.684
+
+alastor 113,5		S
+		
+4.357		114,501
+	
+pako 117,857		S+
+
+3.528
+
+gitrog 121,385		S+		
+
+2.026
+
+gorecalw 123,411	S+	
+
+2.833		124,984
+
+isshin 126,244		S++	
+
+6.631		
+				
+Miirym 132,875		S++		
+	
+			
+
+
+
+middleOfPoints = 100.4375
+middleOfGaps = 3.528
+fasciaUtilizzataDi`0-550` = 64,875
+divisoneGruppiPunti = 10,043
+inizio ATier = 94,716
+
+
+
+
+		55,783
+
+omnath 68		H	
+
+2.125
+
+eowyn 70.125		H
+
+2.111
+
+liesa 72.23675		H
+
+2.761
+	
+sauron 74.997		H
+	
+4.076		78,096
+
+hakbal 79.703		G
+
+6.963
+
+rafiq 86.666		G	
+
+1.034
+
+thassa 87.7		G
+
+5.586
+
+hazezon 93.2865		G
+
+		100,409
+
+			F
+
+		122,722
+
+			E
+
+		145.035
+
+			D
+
+		167,348 
+	
+			C
+
+113.730		189,661 
+
+lathril 207.016		B	
+		
+14.133		211,974
+
+sliver 221.249		A	
+
+1.050
+		
+gishath 222.299		A
+
+1.665
+
+chatterfang 223.964	A
+		
+1.748
+
+jhoira 225.712		A
+
+5.104
+
+zhudolok 230.816	A
+		
+2.684
+
+alastor 233.5		A
+		
+4.357		234,287
+	
+pako 237.857		S
+
+3.528		
+
+gitrog 241.385		S
+	
+2.026
+
+gorecalw 243.411	S	
+
+2.833
+
+isshin 246.244		S
+
+6.631
+				
+Miirym 252.875		S
+
+
+		256.600
+-----
+middleOfPoints = 223.131
+middleOfGaps = 3.528
+fasciaUtilizzataDi`0-550` = 184,875
+divisoneGruppiPunti = 22,313
+InizioATier = 
+
+			56,566
+
+omnath 66
+
+4,125			67,879
+
+eowyn 70.125
+
+10.111			79,192
+
+liesa 80.23675
+
+0.761
+
+sauron 80.997
+	
+6.706			
+
+hakbal 87.703
+
+9.963			90,505
+
+rafiq 97.666				
+
+3.034
+
+thassa 100.7			
+
+1.568			101,818
+
+hazezon 102.2865		
+
+1.730
+
+lathril 104.016			
+
+4.233
+
+sliver 108.249				
+
+2.050			
+
+gishath 110.2995		B			
+
+5.665			113.13175
+
+chatterfang 115.964		A	
+
+2.748
+
+jhoira 118.712			
+
+4.104
+
+zhudolok 122.816		
+
+4.684			124,444
+
+alastor 127.5			
+
+6.357			
+
+pako 133.857			
+
+9.528			135,757
+
+gitrog 143.385			
+
+12.026			147,07
+
+gorecalw 155.411		
+
+4.883			158,383
+
+isshin 160.244			
+
+99.631			169,696
+
+			181
+
+Miirym 259.875		
+
+
+-----	
+
+function middleOfArray = (arr[Math.floor((arr.length + 1) / 2)] + arr[Math.ceil((arr.length + 1) / 2)]) / 2;
+
+middleOfPoints = middleOfArray(sortedTierList)
+
+fasciaUtilizzataDi`0-550` = sortedTierList[sortedTierList/length-1] - sortedTierList[0]
+
+let tierGroups = {"Z","S++","S+","S","A","B","C","D","E"}
+
+char x = tierGroups[0]
+
+divisoneGruppiPunti = (fasciaUtilizzataDi`0-550`/NumeroTotMazziConStatDisponibili)*middleOfArray(sortedGapsList)
+
+inizioATier = middleOfPoints - (divisoneGruppiPunti/2)
+
+ArrayIniziVariTier = [(trovaNumeroPiuBassoPossibile())+(divisoneGruppiPunti*posThisArray), ...]
+
+
+
+middleOfPoints 113,131
+
+
+		36,975
+
+omnath 68		D
+
+2.125
+
+eowyn 70.125		D
+
+2.111
+
+liesa 72.23675		D
+
+2.761		73,95
+	
+sauron 74.997		C
+	
+4.076		
+
+hakbal 79.703		C
+
+6.963
+
+rafiq 86.666		C
+
+1.034
+
+thassa 87.7		C
+
+5.586
+
+hazezon 93.2865		C
+
+		110,926
+
+			B
+	
+		147,9
+
+			A
+
+		184,875 
+	
+			
+
+113.730 
+
+lathril 207.016		S
+			
+14.133
+	
+sliver 221.249		S
+
+1.050		221,85
+		
+gishath 222.299		S+
+
+1.665
+
+chatterfang 223.964	S+
+		
+1.748
+
+jhoira 225.712		S+
+
+5.104
+
+zhudolok 230.816	S+
+		
+2.684
+
+alastor 233.5		S+
+		
+4.357
+	
+pako 237.857		S+
+
+3.528
+
+gitrog 241.385		S+
+	
+2.026
+
+gorecalw 243.411	S+	
+
+2.833
+
+isshin 246.244		S+
+
+6.631
+				
+Miirym 252.875		S+
+
+
+		258,825
+
