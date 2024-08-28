@@ -619,6 +619,40 @@
 
             </div>
 
+            <hr style="background-color: #a3a3a3; margin-top: 30px;"/>
+
+            <div class="row">
+
+                <div class="col-12" style="color: #FFF; text-align: left; margin-top: 5%;">
+
+                    <div class="row">
+
+                        <div class="col-10">
+                            <h4>Mostra mazzi smontati</h4>
+                        </div>
+
+                        <div class="col-2" style="margin-top: 1.3%;">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="oldDecksSwitch">
+                                <label class="custom-control-label" for="oldDecksSwitch"></label>
+                            </div>
+                        </div>
+                    </div>
+                      
+                    <div class="row" id="settingsAltDiv"></div>
+
+                    <div class="row" style="margin-top: 3%;">
+
+                        <div class="col-12">
+                            <h6 style="color: grey; font-size: small;">Alcuni mazzi sono esclusi nella considerazione di statistiche e dalla lista dei mazzi mostrata.</h6>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
             <hr style="background-color: #a3a3a3;"/>
 
             <div class="row">
@@ -644,7 +678,7 @@
                     
                 </div>
 
-            </div>
+            </div>            
 
             <hr style="background-color: #a3a3a3; margin-top: 30px;"/>
 
@@ -950,6 +984,7 @@
             document.getElementById("navbar").hidden = true;
 
             document.getElementById("alternativeSwitch").checked = impostazioni.alternativeInfo;
+            document.getElementById("oldDecksSwitch").checked = impostazioni.oldDecks;
             document.getElementById("lastPageSwitch").checked = impostazioni.lastPage;
             document.getElementById("rangeDecks").value = impostazioni.deckGrid;
 
@@ -2167,19 +2202,34 @@
             let impostazioni = JSON.parse(localStorage.getItem('settings'));
 
             let elenco = JSON.parse(decksJSON);
+
+            let newElenco = [];
+
+            if (impostazioni.oldDecks == false){
+                for (let i = 0; i < elenco.length; i++){
+                    if(elenco[i].v == true){
+                        newElenco.push(elenco[i]);
+                    }
+                }
+            }
+            else{
+                newElenco = elenco;
+            }
+
+            console.log(newElenco)
             
             let order = impostazioni.ordine;
             let grid = impostazioni.deckGrid;
             let alt = impostazioni.alternativeInfo;
 
             if (alt){
-                for (let i = 0; i < elenco.length; i++){
-                    if (elenco[i].aco != ''){
-                        elenco[i].co = elenco[i].aco;
+                for (let i = 0; i < newElenco.length; i++){
+                    if (newElenco[i].aco != ''){
+                        newElenco[i].co = newElenco[i].aco;
                     }
 
-                    if (elenco[i].acoi != ''){
-                        elenco[i].coi = elenco[i].acoi;
+                    if (newElenco[i].acoi != ''){
+                        newElenco[i].coi = newElenco[i].acoi;
                     }
                 }
             }
@@ -2187,16 +2237,16 @@
             let filter = [];
 
             if (term != ''){
-                for (let i = 0; i < elenco.length; i++){
-                    if (elenco[i].co.slice(0, term.length).normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim() == term.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim() ){
+                for (let i = 0; i < newElenco.length; i++){
+                    if (newElenco[i].co.slice(0, term.length).normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim() == term.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim() ){
 
-                        filter.push(elenco[i]);
+                        filter.push(newElenco[i]);
 
                     }
                 }
             }
 
-            else {filter = elenco;}
+            else {filter = newElenco;}
 
             let stringa = "";
 
@@ -2418,11 +2468,25 @@
 
             let elenco = JSON.parse(decksJSON);
 
-            if(impostazioni.alternativeInfo){
+            let newElenco = [];
+            
+            if (impostazioni.oldDecks == false){
                 for (let i = 0; i < elenco.length; i++){
+                    if(elenco[i].v == true){
+                        newElenco.push(elenco[i]);
+                    }
+                }
+            }
+            else{
+                newElenco = elenco;
+            }
+            
 
-                    if (elenco[i].acoi != ''){
-                        elenco[i].coi = elenco[i].acoi;
+            if(impostazioni.alternativeInfo){
+                for (let i = 0; i < newElenco.length; i++){
+
+                    if (newElenco[i].acoi != ''){
+                        newElenco[i].coi = newElenco[i].acoi;
                     }
 
                 }
@@ -2516,28 +2580,32 @@
                 let stringaD = ``;
                 let stringaN = ``;
 
-                for (let i = 0; i < tierList.all.length; i++){
-                    if(tierList.all[i].t == 'G'){
-                        document.getElementById('GodTier').hidden = false;
-                        stringaG += `<div style="background-image: url(${elenco[tierList.all[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.all[i].t == 'S'){
-                        stringaS += `<div style="background-image: url(${elenco[tierList.all[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.all[i].t == 'A'){
-                        stringaA += `<div style="background-image: url(${elenco[tierList.all[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.all[i].t == 'B'){
-                        stringaB += `<div style="background-image: url(${elenco[tierList.all[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.all[i].t == 'C'){
-                        stringaC += `<div style="background-image: url(${elenco[tierList.all[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.all[i].t == 'D'){
-                        stringaD += `<div style="background-image: url(${elenco[tierList.all[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.all[i].t == 'N'){
-                        stringaN += `<div style="background-image: url(${elenco[tierList.all[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                for (let i = 0; i < newElenco.length; i++){
+                    for (let k = 0; k < tierList.all.length; k++){
+                        if(newElenco[i].c == tierList.all[k].c){
+                            if(tierList.all[k].t == 'G'){
+                                document.getElementById('GodTier').hidden = false;
+                                stringaG += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.all[k].t == 'S'){
+                                stringaS += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.all[k].t == 'A'){
+                                stringaA += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.all[k].t == 'B'){
+                                stringaB += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.all[k].t == 'C'){
+                                stringaC += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.all[k].t == 'D'){
+                                stringaD += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.all[k].t == 'N'){
+                                stringaN += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                        }
                     }
                 }
 
@@ -2564,28 +2632,32 @@
                 let stringaD = ``;
                 let stringaN = ``;
 
-                for (let i = 0; i < tierList.lastTwenty.length; i++){
-                    if(tierList.lastTwenty[i].t == 'G'){
-                        document.getElementById('GodTier').hidden = false;
-                        stringaG += `<div style="background-image: url(${elenco[tierList.lastTwenty[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.lastTwenty[i].t == 'S'){
-                        stringaS += `<div style="background-image: url(${elenco[tierList.lastTwenty[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.lastTwenty[i].t == 'A'){
-                        stringaA += `<div style="background-image: url(${elenco[tierList.lastTwenty[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.lastTwenty[i].t == 'B'){
-                        stringaB += `<div style="background-image: url(${elenco[tierList.lastTwenty[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.lastTwenty[i].t == 'C'){
-                        stringaC += `<div style="background-image: url(${elenco[tierList.lastTwenty[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.lastTwenty[i].t == 'D'){
-                        stringaD += `<div style="background-image: url(${elenco[tierList.lastTwenty[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
-                    }
-                    else if(tierList.lastTwenty[i].t == 'N'){
-                        stringaN += `<div style="background-image: url(${elenco[tierList.lastTwenty[i].c - 1].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                for (let i = 0; i < newElenco.length; i++){
+                    for (let k = 0; k < tierList.lastTwenty.length; k++){
+                        if(newElenco[i].c == tierList.lastTwenty[k].c){
+                            if(tierList.lastTwenty[k].t == 'G'){
+                                document.getElementById('GodTier').hidden = false;
+                                stringaG += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.lastTwenty[k].t == 'S'){
+                                stringaS += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.lastTwenty[k].t == 'A'){
+                                stringaA += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.lastTwenty[k].t == 'B'){
+                                stringaB += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.lastTwenty[k].t == 'C'){
+                                stringaC += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.lastTwenty[k].t == 'D'){
+                                stringaD += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                            else if(tierList.lastTwenty[k].t == 'N'){
+                                stringaN += `<div style="background-image: url(${newElenco[i].coi}); width: 78px; height: 78px; background-size: cover; background-repeat: no-repeat;background-position: center;"></div>`;
+                            }
+                        }
                     }
                 }
 
@@ -3857,7 +3929,8 @@
                 startingPage: 'Home',
                 defaultMode: 'Commhundred',
                 cronologia: ['Home'],
-                lastPage: false
+                lastPage: false,
+                oldDecks: false
             }
 
             localStorage.setItem('settings', JSON.stringify(impostazioni));
@@ -3885,6 +3958,19 @@
             }
 
             localStorage.setItem('settings', JSON.stringify(impostazioni));
+            
+        });
+
+        document.getElementById('oldDecksSwitch').addEventListener('change', (e) => {
+            this.checkboxValue = e.target.checked ? true : false;
+
+            let impostazioni = JSON.parse(localStorage.getItem('settings'));
+
+            impostazioni.oldDecks = this.checkboxValue;
+
+            localStorage.setItem('settings', JSON.stringify(impostazioni));
+
+            fillHome(decksJSON);
             
         });
 
@@ -4143,6 +4229,21 @@
                     w: 0
                 },
             }
+
+            let newElenco = [];
+
+            if (impostazioni.oldDecks == false){
+                for (let i = 0; i < elenco.length; i++){
+                    if(elenco[i].v == true){
+                        newElenco.push(elenco[i]);
+                    }
+                }
+            }
+            else{
+                newElenco = elenco;
+            }
+
+            elenco = newElenco;
 
             for (let i = 0; i < elenco.length; i++){
 
