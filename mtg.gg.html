@@ -154,6 +154,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         position: absolute;
         height: 100vh;
         width: 100%;
@@ -778,7 +779,7 @@
         <a onclick="ciao()" id="wakeup" hidden>
             <div>
                 <div class="centered-div">
-                    <h1>Riprendi dall'ultima pagina</h1>
+                    <h1>Tocca per riprendere dall'ultima pagina</h1>
                 </div>
             </div>
         </a>
@@ -802,11 +803,11 @@
 
             }
 
-            document.getElementById("tdNavHome").innerHTML = `<a onclick="" id="home"></a>`
-            document.getElementById("tdNavTier").innerHTML = `<a onclick="navigateToPage('tier-list'); tierPage();" id="tier-list"></a>`
-            document.getElementById("tdNavHistory").innerHTML = `<a onclick="navigateToPage('history'); historyPage();" id="history"></a>`
-            document.getElementById("tdNavDecks").innerHTML = `<a onclick="navigateToPage('decks'); decksPage();" id="decks"></a>`
-            document.getElementById("tdNavGame").innerHTML = `<a onclick="navigateToPage('game'); gamePage();" id="points"></a>`
+            document.getElementById("tdNavHome").innerHTML = `<a onclick="" id="home"></a>`;
+            document.getElementById("tdNavTier").innerHTML = `<a onclick="navigateToPage('tier-list'); tierPage();" id="tier-list"></a>`;
+            document.getElementById("tdNavHistory").innerHTML = `<a onclick="navigateToPage('history'); historyPage();" id="history"></a>`;
+            document.getElementById("tdNavDecks").innerHTML = `<a onclick="navigateToPage('decks'); decksPage();" id="decks"></a>`;
+            document.getElementById("tdNavGame").innerHTML = `<a onclick="navigateToPage('game'); gamePage();" id="points"></a>`;
 
             document.getElementById("homePage").hidden = false;
             document.getElementById("tierListPage").hidden = true;
@@ -875,7 +876,7 @@
             }
 
             document.getElementById("tdNavHome").innerHTML = `<a onclick="navigateToPage('home'); homePage()" id="home"></a>`;
-            document.getElementById("tdNavTier").innerHTML = `<a onclick="navigateToPage('tier-list'); tierPage();" id="tier-list"></a>`
+            document.getElementById("tdNavTier").innerHTML = `<a onclick="navigateToPage('tier-list'); tierPage();" id="tier-list"></a>`;
             document.getElementById("tdNavHistory").innerHTML = `<a onclick="" id="history"></a>`;
             document.getElementById("tdNavDecks").innerHTML = `<a onclick="navigateToPage('decks'); decksPage();" id="decks"></a>`;
             document.getElementById("tdNavGame").innerHTML = `<a onclick="navigateToPage('game'); gamePage();" id="points"></a>`;
@@ -895,7 +896,7 @@
             document.getElementById("points").innerHTML = `<i class="fa-solid fa-table fa-xl i-nav"></i><p style="margin-top: 8px;">Match</p>`;
 
             document.getElementById("navbar").hidden = false;
-        }
+        };
 
         const decksPage = (e) => {
 
@@ -989,11 +990,11 @@
             document.getElementById("rangeDecks").value = impostazioni.deckGrid;
 
             if (impostazioni.alternativeInfo){
-                document.getElementById("settingsAltDiv").innerHTML = `<button class="btn btn-deck div-deck-1" style="background-image: url(${decks[20].acoi}); height: 150px;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Maestro del Chi</h6></button>`
+                document.getElementById("settingsAltDiv").innerHTML = `<button class="btn btn-deck div-deck-1" style="background-image: url(${decks[28].acoi}); height: 150px;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Maestro del Chi</h6></button>`
             }
 
             else if (!impostazioni.alternativeInfo){
-                document.getElementById("settingsAltDiv").innerHTML = `<button class="btn btn-deck div-deck-1" style="background-image: url(${decks[20].coi}); height: 150px;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Azusa, Smarrita ma Cercatrice</h6></button>`
+                document.getElementById("settingsAltDiv").innerHTML = `<button class="btn btn-deck div-deck-1" style="background-image: url(${decks[28].coi}); height: 150px;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Azusa, Smarrita ma Cercatrice</h6></button>`
             }
 
 
@@ -3947,11 +3948,11 @@
             impostazioni.alternativeInfo = this.checkboxValue;
 
             if (impostazioni.alternativeInfo){
-                document.getElementById("settingsAltDiv").innerHTML = `<button class="btn btn-deck div-deck-1" style="background-image: url(${decks[20].acoi}); height: 150px;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Maestro del Chi</h6></button>`
+                document.getElementById("settingsAltDiv").innerHTML = `<button class="btn btn-deck div-deck-1" style="background-image: url(${decks[28].acoi}); height: 150px;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Oogway, Maestro del Chi</h6></button>`
             }
 
             else if (!impostazioni.alternativeInfo){
-                document.getElementById("settingsAltDiv").innerHTML = `<button class="btn btn-deck div-deck-1" style="background-image: url(${decks[20].coi}); height: 150px;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Azusa, Smarrita ma Cercatrice</h6></button>`
+                document.getElementById("settingsAltDiv").innerHTML = `<button class="btn btn-deck div-deck-1" style="background-image: url(${decks[28].coi}); height: 150px;" onclick=""><h6 class="p-buttons" style="font-size: 90%;">Azusa, Smarrita ma Cercatrice</h6></button>`
             }
 
             localStorage.setItem('settings', JSON.stringify(impostazioni));
@@ -4227,21 +4228,6 @@
                 },
             }
 
-            let newElenco = [];
-
-            if (impostazioni.oldDecks == false){
-                for (let i = 0; i < elenco.length; i++){
-                    if(elenco[i].v == true){
-                        newElenco.push(elenco[i]);
-                    }
-                }
-            }
-            else{
-                newElenco = elenco;
-            }
-
-            elenco = newElenco;
-
             for (let i = 0; i < elenco.length; i++){
 
                 if (mostPlayed.c == 0){
@@ -4258,50 +4244,52 @@
 
                 solRing.t += elenco[i].s.all.d.s.t + elenco[i].s.all.t.s.t + elenco[i].s.all.q.s.t + elenco[i].s.all.c.s.t + elenco[i].s.all.s.s.t;
                 solRing.w += elenco[i].s.all.d.s.w + elenco[i].s.all.t.s.w + elenco[i].s.all.q.s.w + elenco[i].s.all.c.s.w + elenco[i].s.all.s.s.w;
-
-                if(elenco[i].i.includes('C')){
-                    identity.c.c += 1;
-                    if(elenco[i].s.to != 0){
-                        identity.c.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
+                
+                if (impostazioni.oldDecks == false && elenco[i].v == false){}
+                else{
+                    if(elenco[i].i.includes('C')){
+                        identity.c.c += 1;
+                        if(elenco[i].s.to != 0){
+                            identity.c.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
+                        }
                     }
+
+                    if(elenco[i].i.includes('W')){
+                        identity.w.c += 1;
+                        if(elenco[i].s.to != 0){
+                            identity.w.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
+                        }
+                    }
+
+                    if(elenco[i].i.includes('U')){
+                        identity.u.c += 1;
+                        if(elenco[i].s.to != 0){
+                            identity.u.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
+                        }
+                        
+                    }
+
+                    if(elenco[i].i.includes('B')){
+                        identity.b.c += 1;
+                        if(elenco[i].s.to != 0){
+                            identity.b.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
+                        }
+                    }
+
+                    if(elenco[i].i.includes('R')){
+                        identity.r.c += 1;
+                        if(elenco[i].s.to != 0){
+                            identity.r.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
+                        }
+                    }
+
+                    if(elenco[i].i.includes('G')){
+                        identity.g.c += 1;
+                        if(elenco[i].s.to != 0){
+                            identity.g.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
+                        }
+                    }   
                 }
-
-                if(elenco[i].i.includes('W')){
-                    identity.w.c += 1;
-                    if(elenco[i].s.to != 0){
-                        identity.w.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
-                    }
-                }
-
-                if(elenco[i].i.includes('U')){
-                    identity.u.c += 1;
-                    if(elenco[i].s.to != 0){
-                        identity.u.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
-                    }
-                    
-                }
-
-                if(elenco[i].i.includes('B')){
-                    identity.b.c += 1;
-                    if(elenco[i].s.to != 0){
-                        identity.b.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
-                    }
-                }
-
-                if(elenco[i].i.includes('R')){
-                    identity.r.c += 1;
-                    if(elenco[i].s.to != 0){
-                        identity.r.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
-                    }
-                }
-
-                if(elenco[i].i.includes('G')){
-                    identity.g.c += 1;
-                    if(elenco[i].s.to != 0){
-                        identity.g.w += ((elenco[i].s.all.d.w + elenco[i].s.all.t.tu + elenco[i].s.all.q.tu + elenco[i].s.all.c.tu + elenco[i].s.all.s.tu) / elenco[i].s.to) * 100;
-                    }
-                }   
-
             }
 
             if(impostazioni.alternativeInfo){
@@ -4487,6 +4475,37 @@
             localStorage.setItem('tierList',JSON.stringify(calculateTiers(decks)));
 
             startingPage();
+
+            let refresh = sessionStorage.getItem('refreshCatch');
+            if(!refresh || refresh == 0 || refresh == 1){
+
+                if(!refresh){
+                    sessionStorage.setItem('refreshCatch',0);
+                    refresh = 0;
+                }
+
+                let impostazioni = JSON.parse(localStorage.getItem('settings'));
+
+                if(impostazioni.lastPage){
+
+                    if (impostazioni.cronologia.length > 1){
+
+                        if(refresh == 0){
+                            for (let i = 0; i < impostazioni.cronologia.length - 1; i++){
+                                navigateToPage(impostazioni.cronologia[i]);
+                            }
+                            sessionStorage.setItem('refreshCatch',1);
+                        }
+
+                        document.getElementById("wakeup").hidden = false;
+
+                    }
+                }
+                else{
+                    sessionStorage.setItem('refreshCatch',2);
+                }
+            }
+        
         }
 
         gitHubFetchDecks();  
@@ -4552,36 +4571,6 @@
         const ciao = () => {
             document.getElementById("wakeup").hidden = true;
             sessionStorage.setItem('refreshCatch',2);
-        }
-
-        let refresh = sessionStorage.getItem('refreshCatch');
-        if(!refresh || refresh == 0 || refresh == 1){
-
-            if(!refresh){
-                sessionStorage.setItem('refreshCatch',0);
-                refresh = 0;
-            }
-
-            let impostazioni = JSON.parse(localStorage.getItem('settings'));
-
-            if(impostazioni.lastPage){
-
-                if (impostazioni.cronologia.length > 1){
-
-                    if(refresh == 0){
-                        for (let i = 0; i < impostazioni.cronologia.length - 1; i++){
-                            navigateToPage(impostazioni.cronologia[i]);
-                        }
-                        sessionStorage.setItem('refreshCatch',1);
-                    }
-
-                    document.getElementById("wakeup").hidden = false;
-
-                }
-            }
-            else{
-                sessionStorage.setItem('refreshCatch',2);
-            }
         }
         
         async function lock() {
